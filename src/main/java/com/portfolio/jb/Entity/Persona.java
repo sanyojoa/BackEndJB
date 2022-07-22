@@ -30,6 +30,7 @@ public class Persona {
     @Size(min = 1, max = 45, message = "No cumple con los requisitos")
     private String apellido;
 
+    @NotNull
     @Size(min = 1, max = 500, message = "No cumple con los requisitos")
     private String img;
 
