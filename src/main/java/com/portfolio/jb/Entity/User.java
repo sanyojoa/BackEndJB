@@ -13,7 +13,7 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false, unique = true, length = 50)
+    @Column(nullable = false, unique = true, length = 60)
     private String email;
 
     @Column(nullable = false)
@@ -22,8 +22,7 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(Integer id, String email, String password) {
-        this.id = id;
+    public User(String email, String password) {
         this.email = email;
         this.password = password;
     }
