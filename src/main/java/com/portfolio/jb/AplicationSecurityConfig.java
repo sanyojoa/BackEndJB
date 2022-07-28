@@ -21,7 +21,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class AplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    private UserRepository userRepository;
+    private UserRepository userRepo;
     @Autowired
     private JwtTokenFilter jwtTokenFilter;
 
@@ -32,7 +32,7 @@ public class AplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-        auth.userDetailsService(username -> userRepository.findByEmail(username)
+        auth.userDetailsService(username -> userRepo.findByEmail(username)
                 .orElseThrow(() -> new UsernameNotFoundException("No user")));
     }
 

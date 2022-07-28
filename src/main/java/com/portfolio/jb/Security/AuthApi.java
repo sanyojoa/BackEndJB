@@ -22,7 +22,7 @@ public class AuthApi {
     @Autowired
     JwtTokenUtil jwtTokenUtil;
     @PostMapping("/api/login")
-    public ResponseEntity<?> loin(@RequestBody @Valid AuthRequest request){
+    public ResponseEntity<?> login(@RequestBody @Valid AuthRequest request){
         try {
             Authentication authentication = authManager.authenticate(
                     new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
