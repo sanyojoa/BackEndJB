@@ -2,11 +2,10 @@ package com.portfolio.jb.Security.Service;
 
 import com.portfolio.jb.Security.Entity.Usuario;
 import com.portfolio.jb.Security.Repository.iUsuarioRepository;
+import java.util.Optional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -18,16 +17,16 @@ public class UsuarioService {
         return iusuarioRepository.findByNombreUsuario(nombreUsuario);
     }
 
-    public boolean existByNombreUsuario(String nombreUsuario){
+    public boolean existsByNombreUsuario(String nombreUsuario){
         return iusuarioRepository.existByNombreUsuario(nombreUsuario);
     }
 
-    public boolean existByEmail(String email){
-        return iusuarioRepository.existByNombreEmail(email);
+    public boolean existsByEmail(String email){
+        return iusuarioRepository.existByEmail(email);
     }
 
     public void save(Usuario usuario){
         iusuarioRepository.save(usuario);
     }
-
 }
+
