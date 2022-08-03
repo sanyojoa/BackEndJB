@@ -4,31 +4,33 @@ import javax.validation.constraints.NotBlank;
 
 public class dtoEducacion {
     @NotBlank
-    private String nombreEd;
+    private String nombreE;
     @NotBlank
-    private String descripcionEd;
+    private String descripcionE;
 
     public dtoEducacion() {
     }
 
-    public dtoEducacion(String nombreEd, String descripcionEd) {
-        this.nombreEd = nombreEd;
-        this.descripcionEd = descripcionEd;
+    public dtoEducacion(String nombreE, String descripcionE) {
+        this.nombreE = nombreE;
+        this.descripcionE = descripcionE;
     }
 
-    public String getNombreEd() {
-        return nombreEd;
+    public String getNombreE() {
+        return nombreE;
     }
 
-    public void setNombreEd(String nombreEd) {
-        this.nombreEd = nombreEd;
+    public void setNombreE(String nombreE) {
+        this.nombreE = nombreE;
     }
 
-    public String getDescripcionEd() {
-        return descripcionEd;
+    public String getDescripcionE() {
+        return descripcionE;
     }
 
-    public void setDescripcionEd(String descripcionEd) {
-        this.descripcionEd = descripcionEd;
+    public void setDescripcionE(String descripcionE) {
+        this.descripcionE = descripcionE;
     }
+
+
 }

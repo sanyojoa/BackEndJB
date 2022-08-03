@@ -2,12 +2,11 @@ package com.portfolio.jb.Service;
 
 import com.portfolio.jb.Entity.Educacion;
 import com.portfolio.jb.Repository.REducacion;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+import javax.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
@@ -23,8 +22,8 @@ public class SEducacion {
         return rEducacion.findById(id);
     }
 
-    public Optional<Educacion> getByNombreEd(String nombreEd){
-        return rEducacion.findByNombreEd(nombreEd);
+    public Optional<Educacion> getByNmbreE(String nombreE){
+        return rEducacion.findByNombreE(nombreE);
     }
 
     public void save(Educacion educacion){
@@ -39,7 +38,7 @@ public class SEducacion {
         return rEducacion.existsById(id);
     }
 
-    public boolean existsByNombreEd(String nombreEd){
-        return rEducacion.existByNombreEd(nombreEd);
+    public boolean existsByNombreE(String nombreE){
+        return rEducacion.existsByNombreE(nombreE);
     }
 }

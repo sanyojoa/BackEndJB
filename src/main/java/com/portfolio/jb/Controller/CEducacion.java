@@ -52,15 +52,15 @@ public class CEducacion {
 
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody dtoEducacion dtoeducacion){
-        if(StringUtils.isBlank(dtoeducacion.getNombreEd())){
+        if(StringUtils.isBlank(dtoeducacion.getNombreE())){
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        if(sEducacion.existsByNombreEd(dtoeducacion.getNombreEd())){
+        if(sEducacion.existsByNombreE(dtoeducacion.getNombreE())){
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
 
         Educacion educacion = new Educacion(
-                dtoeducacion.getNombreEd(), dtoeducacion.getDescripcionEd()
+                dtoeducacion.getNombreE(), dtoeducacion.getDescripcionE()
         );
         sEducacion.save(educacion);
         return new ResponseEntity(new Mensaje("Educacion creada"), HttpStatus.OK);
@@ -72,20 +72,21 @@ public class CEducacion {
         if(!sEducacion.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
-        if(sEducacion.existsByNombreEd(dtoeducacion.getNombreEd()) && sEducacion.getByNombreEd(dtoeducacion.getNombreEd()).get().getId() != id){
+        if(sEducacion.existsByNombreE(dtoeducacion.getNombreE()) && sEducacion.getByNmbreE(dtoeducacion.getNombreE()).get().getId() != id){
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
-        if(StringUtils.isBlank(dtoeducacion.getNombreEd())){
+        if(StringUtils.isBlank(dtoeducacion.getNombreE())){
             return new ResponseEntity(new Mensaje("El campo no puede estar vacio"), HttpStatus.BAD_REQUEST);
         }
 
         Educacion educacion = sEducacion.getOne(id).get();
 
-        educacion.setNombreEd(dtoeducacion.getNombreEd());
-        educacion.setDescripcionEd(dtoeducacion.getDescripcionEd());
+        educacion.setNombreE(dtoeducacion.getNombreE());
+        educacion.setDescripcionE(dtoeducacion.getDescripcionE());
 
         sEducacion.save(educacion);
 
         return new ResponseEntity(new Mensaje("Educacion actualizada"), HttpStatus.OK);
     }
 }
+
