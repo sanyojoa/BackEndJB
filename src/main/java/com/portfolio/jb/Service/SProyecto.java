@@ -24,7 +24,7 @@ public class SProyecto {
     }
 
     public Optional<Proyecto> getByNombreP(String nombreP){
-        return rProyecto.findByNombreE(nombreP);
+        return rProyecto.findByNombreP(nombreP);
     }
 
     public void save(Proyecto proyecto){
