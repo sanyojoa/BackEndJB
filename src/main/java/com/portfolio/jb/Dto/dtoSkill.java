@@ -16,7 +16,6 @@ public class dtoSkill {
     public dtoSkill(String nombreS, String porcentajeS, String imgS) {
         this.nombreS = nombreS;
         this.porcentajeS = porcentajeS;
-        this.imgS = imgS;
     }
 
     public String getNombreS() {
